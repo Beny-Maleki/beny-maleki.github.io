@@ -1,35 +1,53 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { MdEmail } from "react-icons/md";
+import profilePic from './pic.png'; // import your image here
+
+
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <motion.h1
+        <motion.div
+          className="header-container"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Benyamin Maleki
-        </motion.h1>
-        <p>Location: Tehran, Iran</p>
-        <motion.a
-          href="mailto:benyaminmaleki81@gmail.com"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-        >
-          benyaminmaleki81@gmail.com
-        </motion.a>
+          <img src={profilePic} alt="Profile" className="profile-pic" />
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5 }}
+          >
+            Benyamin Maleki
+          </motion.h1>
+        </motion.div>
         <motion.div
           className="social-links"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.5 }}
-        >
-          <a href="https://github.com/Beny-Maleki">GitHub</a> | 
-          <a href="https://www.linkedin.com/in/benyamin-maleki-747019207/">LinkedIn</a>
+        >      
+          <motion.a
+            href="mailto:benyaminmaleki81@gmail.com"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 0.5 }}
+            className='icons'
+          >
+            <MdEmail size={30} color="#0077b5"/>
+          </motion.a>    
+          <a href="https://github.com/Beny-Maleki" className='icons'>
+            <FaGithub size={30} color="#0077b5" />
+          </a>  
+          <a href="https://www.linkedin.com/in/benyamin-maleki-747019207/" className='icons'>
+          <FaLinkedin size={30} color="#0077b5" />
+          </a>
         </motion.div>
       </header>
 

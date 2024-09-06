@@ -1,13 +1,29 @@
-.App {
-  text-align: center;
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
+.App {
+  text-align: center;
+  min-height: 100vh; /* Ensure it takes the full viewport height */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Update the header colors */
 .App-header {
-  background-color: #4CAF50;
+  color: #2352c9;
+  background: linear-gradient(
+    -90deg,
+    #7799ee 0%,
+    #74bff4 20%,
+    #8ec5d6 40%,
+    #C1C8E4 60%,
+    #a68bda 100%
+  ); 
   padding: 20px;
-  color: white;
 }
 
 .profile-pic {
@@ -47,4 +63,79 @@ ul {
 ul li {
   margin: 15px 0;
   cursor: pointer;
+}
+
+.canvas {
+  min-height: 100vh; /* Ensure it takes the full viewport height */
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  font-family: 'Poppins';
+  
+  z-index: 0;
+}
+
+.canvas::before,
+.canvas::after,
+.canvas > .circles,
+.canvas > .circles::before,
+.canvas > .circles::after {
+  filter: blur(75px);
+}
+
+.canvas::before,
+.canvas::after {
+  position: absolute;
+  content: "";
+  width: 390px;
+  height: min-content;
+  border-radius: 100%;
+}
+
+.canvas::before {
+  background: #ffecf5;
+  left: -295px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.canvas::after {
+  background: #86e1ef;
+  right: -195px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.canvas > .circles,
+.canvas > .circles::before,
+.canvas > .circles::after {
+  border-radius: 100%;
+  position: absolute;
+}
+
+.canvas > .circles::before,
+.canvas > .circles::after {
+  content: "";
+  width: 140px;
+  height: 140px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.canvas > .circles {
+  width: 230px;
+  height: 230px;
+  background: #ffc285;
+  bottom: -60px;
+  left: 75px;
+}
+
+.canvas > .circles::before {
+  background: #8600ff;
+  left: -40%;
+}
+
+.canvas > .circles::after {
+  background: #ff0000;
+  right: -20%;
 }

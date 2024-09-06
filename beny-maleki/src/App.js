@@ -26,6 +26,7 @@ function App() {
           >
             Benyamin Maleki
           </motion.h1>
+          <p> (Yet Under Construction :D)</p>
         </motion.div>
         <motion.div
           className="social-links"
@@ -40,18 +41,19 @@ function App() {
             transition={{ delay: 1, duration: 0.5 }}
             className='icons'
           >
-            <MdEmail size={30} color="#0077b5"/>
+            <MdEmail size={35} color="#2352c9"/>
           </motion.a>    
           <a href="https://github.com/Beny-Maleki" className='icons'>
-            <FaGithub size={30} color="#0077b5" />
+            <FaGithub size={35} color="#2352c9" />
           </a>  
           <a href="https://www.linkedin.com/in/benyamin-maleki-747019207/" className='icons'>
-          <FaLinkedin size={30} color="#0077b5" />
+          <FaLinkedin size={35} color="#2352c9" />
           </a>
         </motion.div>
       </header>
 
-      <section>
+      <body className='canvas'>
+      <section >
         <motion.h2
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
@@ -83,22 +85,23 @@ function App() {
         </motion.h2>
         <ul>
           <motion.li
-            whileHover={{ scale: 1.05, rotate: 3 }}
+            whileHover={{ scale: 1.03, rotate: 1 }}
           >
             Lighting Manager for Unreal Engine 5
           </motion.li>
           <motion.li
-            whileHover={{ scale: 1.05, rotate: 3 }}
+            whileHover={{ scale: 1.03, rotate: 1 }}
           >
             Fake News Classification with MPNet
           </motion.li>
           <motion.li
-            whileHover={{ scale: 1.05, rotate: 3 }}
+            whileHover={{ scale: 1.03, rotate: 1 }}
           >
             Detoxifying Text from Hate Speech
           </motion.li>
         </ul>
-      </section>
+        </section>
+      </body>
     </div>
   );
 }
